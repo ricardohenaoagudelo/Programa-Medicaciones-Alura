@@ -82,3 +82,44 @@ footer {
   color: white;
   margin-top: 20px;
 }
+/* Estilos generales para pantallas pequeñas (móviles) */
+@media only screen and (max-width: 768px) {
+  /* Ajustar el cuerpo para móviles */
+  body {
+    padding: 10px;
+    font-size: 16px;
+  }
+
+  /* Alinear el contenido de manera vertical */
+  .content-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Ajustar el ancho de la lista de productos seleccionados */
+  #selected-products, .product-selection {
+    width: 100%; /* Ocupa el ancho completo de la pantalla */
+    margin-bottom: 20px; /* Añade espacio entre las secciones */
+  }
+
+  /* Asegurar que los botones sean accesibles y fáciles de usar */
+  button {
+    font-size: 18px;
+    padding: 15px;
+  }
+
+  /* Hacer que los campos de entrada ocupen todo el ancho */
+  input, select {
+    width: 100%;
+    font-size: 18px;
+  }
+
+  /* Aumentar el tamaño del texto para mejor legibilidad */
+  h2 {
+    font-size: 22px;
+  }
+}
+img {
+  max-width: 100%; /* La imagen nunca será más grande que su contenedor */
+  height: auto; /* Mantener la proporción de la imagen */
+}
