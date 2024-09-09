@@ -1,0 +1,84 @@
+body {
+  background-color: #f0f0f0; /* Fondo general */
+  color: #333333; /* Color del texto */
+  font-family: 'Arial', sans-serif; /* Fuente simple y legible */
+}
+
+h1, h2 {
+  color: #4CAF50; /* Verde suave para títulos */
+  text-align: center; /* Centrar los títulos */
+  font-weight: bold;
+}
+
+nav button {
+  background-color: #4CAF50; /* Botones principales en verde */
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  margin: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+nav button:hover {
+  background-color: #388E3C; /* Efecto hover con verde oscuro */
+}
+
+#medication-module, #price-comparison-module {
+  background-color: #ffffff; /* Fondos de los módulos en blanco */
+  padding: 20px;
+  margin: 20px auto;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 800px; /* Ancho máximo */
+}
+
+.dose-options button {
+  background-color: #4CAF50;
+  color: white;
+  width: 100%;
+  padding: 15px;
+  font-size: 18px;
+  border: none;
+  margin-top: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.dose-options button:hover {
+  background-color: #388E3C;
+}
+
+#selected-products {
+  background-color: #f9f9f9;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 8px;
+}
+
+#selected-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+#selected-list li {
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #e0e0e0; /* Fondo de los productos seleccionados */
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between; /* Espaciar los elementos dentro del li */
+}
+
+#selected-list li:hover {
+  background-color: #d4d4d4; /* Efecto hover para productos seleccionados */
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #4CAF50;
+  color: white;
+  margin-top: 20px;
+}
