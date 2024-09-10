@@ -408,13 +408,13 @@ function comparePrices() {
    // Calcular la conversión del precio ajustado del competidor a la concentración de nuestro producto
    let competitorPriceAtOurConcentration = adjustedCompetitorPrice * ourConcentration;
   // Comparar los precios ajustados
-  let resultMessage = '';
-  if (competitorPriceAtOurConcentration < adjustedOurPrice) {
+let resultMessage = '';
+  if (competitorPriceAtOurConcentration < ourPrice) {
     resultMessage = `El producto competidor (${competitorProduct}) es más barato cuando se ajusta a la concentración de nuestro producto (${selectedProduct}).`;
-  } else if (competitorPriceAtOurConcentration > adjustedOurPrice) {
-    resultMessage = `Nuestro producto (${selectedProduct}) es más barato cuando se ajusta a la concentración del competidor.`;
+  } else if (competitorPriceAtOurConcentration > ourPrice) {
+    resultMessage = `Nuestro producto (${selectedProduct}) es más barato en comparación con el competidor (${competitorProduct}) cuando ajustamos la concentración.`;
   } else {
-    resultMessage = `Ambos productos tienen el mismo precio ajustado a la concentración de nuestro producto.`;
+    resultMessage = `Ambos productos tienen el mismo precio ajustado por concentración.`;
   }
   // Mostrar el resultado en la página
   const resultDiv = document.getElementById('comparison-result');
