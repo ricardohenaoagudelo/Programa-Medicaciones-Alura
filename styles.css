@@ -13,7 +13,7 @@ h1, h2 {
   font-weight: bold;
 }
   header h1 {
-    color: red !important; /* Cambia el color específico del título en el header */
+   color: rgb(254, 254, 254) !important; /* Forzar el color */
   }
   
 
