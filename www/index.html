@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aplicación de Medicaciones y Comparador de Precios</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="script.js"></script>
+  <style>
+    /* Estilo básico del cuerpo */
+    body {
+      background-color: #f0f0f0;
+      color: #080000;
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Estilo para el header */
+    header {
+      background-color: #4CAF50;
+      color: rgb(254, 254, 254) !important; /* Forzar el color */
+      padding: 20px;
+      text-align: center;
+    }
+
+    /* Botones de navegación entre módulos */
+    nav button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      margin: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    nav button:hover {
+      background-color: #388E3C;
+    }
+
+    /* Contenedor principal para productos y productos seleccionados */
+    .content-container {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      margin: 20px;
+    }
+
+    /* Contenedor de la selección de fases y productos */
+    .product-selection {
+      width: 65%;
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Contenedor de la lista de productos seleccionados */
+    #selected-products {
+      width: 50%;
+      background-color: #f9f9f9;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Estilo para la lista de productos seleccionados */
+    #selected-list {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    /* Estilo de los productos seleccionados */
+    #selected-list li {
+      margin-bottom: 10px;
+      cursor: pointer;
+      border: 1px solid #742c2f;
+      padding: 10px;
+      background-color: #fff;
+      border-radius: 5px;
+    }
+
+    #selected-list li:hover {
+      background-color: #e0e0e0;
+    }
+
+    /* Estilo para el botón de producto y el botón de dosis */
+    .product-container button, .dose-options button {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      background-color: #6279d9;
+      color: white;
+      border: 1px solid #ccc;
+      text-align: center;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    /* Cambiar color y tamaño de los botones "Status" */
+    .dose-options button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px;
+      font-size: 14px;
+      border: none;
+      margin-top: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .dose-options button:hover {
+      background-color: #45a049;
+    }
+
+    /* Mantén el recuadro de las bacterias */
+    .bacteria-info {
+      margin-top: 10px;
+      padding: 10px;
+      background-color: #f0f0f0;
+      border: 1px solid #509fc1;
+      border-radius: 5px;
+    }
+
+    /* Estilo del módulo de comparación de precios */
+    #price-comparison-module {
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin: 20px auto;
+      max-width: 800px;
+    }
+
+    /* Estilo de los inputs y selects */
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+
+    /* Botón para comparar precios */
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #388E3C;
+    }
+
+    /* Footer de la página */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #4CAF50;
+      color: white;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 style="color: white;">Aplicación de Medicaciones y Comparador de Precios</h1>
+    <!-- Navegación entre módulos -->
+    <nav>
+      <button onclick="showModule('medication-module')">Módulo de Medicaciones</button>
+      <button onclick="showModule('price-comparison-module')">Comparador de Precios</button>
+    </nav>
+  </header>
+
+  <!-- Módulo de Medicaciones -->
+  <div id="medication-module" class="module">
+    <h2>Selecciona Productos</h2>
+    <button id="respiratorio-btn" onclick="showPhases('respiratorio')">Respiratorio</button>
+    <button id="digestivo-btn" onclick="showPhases('digestivo')">Digestivo</button>
+    
+    <div class="content-container">
+      <!-- Contenedor de fases y productos -->
+      <div class="product-selection">
+        <div id="phases"></div>
+        <div id="products"></div>
+      </div>
+
+      <!-- Lista de productos seleccionados -->
+      <div id="selected-products">
+        <h2>Productos seleccionados</h2>
+        <ul id="selected-list"></ul>
+        <p>Total: $<span id="total-cost">0.00</span></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Módulo de Comparador de Precios -->
+  <div id="price-comparison-module" class="module" style="display:none;">
+    <h2>Comparador de Precios</h2>
+  
+    <div>
+      <label for="competitor-product">Producto Competidor:</label>
+      <input type="text" id="competitor-product" placeholder="Nombre del producto competidor">
+    </div>
+    
+    <div>
+      <label for="competitor-price">Precio por Kg (Competidor):</label>
+      <input type="number" id="competitor-price" placeholder="Precio del producto competidor">
+    </div>
+    
+    <div>
+      <label for="competitor-concentration">Concentración del Producto (%):</label>
+      <input type="number" id="competitor-concentration" placeholder="Concentración del producto competidor">
+    </div>
+
+    <div>
+      <label for="selected-product">Producto Nuestro:</label>
+      <select id="selected-product">
+        <option value="">Selecciona un producto</option>
+        <option value="AMOXIN 600">AMOXIN 600</option>
+        <option value="CIPROFLOX">CIPROFLOX</option>
+        <option value="FENIFLOR">FENIFLOR</option>
+        <option value="FOSMICYNA 90">FOSMICYNA 90</option>
+        <option value="TILCOMIX">TILCOMIX</option>
+        <option value="TILOMIX 250">TILOMIX 250</option>
+        <option value="TILVALOSINA">TILVALOSINA</option>
+        <option value="ESPELIN">ESPELIN</option>
+        <option value="DINAMIX 200">DINAMIX 200</option>
+        <option value="DINAMIX 800">DINAMIX 800</option>
+        <option value="DQCICLIN">DQCICLIN</option>
+        <option value="CLORDIAGRO">CLORDIAGRO</option>
+        <option value="LINCOX">LINCOX</option>
+        <option value="TRIMBAC">TRIMBAC</option>
+        <option value="NEOCYN">NEOCYN</option>
+        <option value="HALQUINOX 800">HALQUINOX 800</option>
+        <option value="HALQUINOX 500">HALQUINOX 500</option>
+        <option value="SAGAH">SAGAH</option>
+        <option value="DMB">DMB</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="our-price">Precio por Kg (Nuestro Producto):</label>
+      <input type="number" id="our-price" placeholder="Precio de nuestro producto">
+    </div>
+    <div>
+      <label for="our-concentration">Concentración del Producto (%):</label>
+      <input type="number" id="concentracion" placeholder="Concentración" readonly>
+    </div>
+
+    <button onclick="comparePrices()">Comparar Precios</button>
+
+    <!-- Resultados de la comparación -->
+    <div id="comparison-result"></div>
+  </div>
+
+  <footer>
+    <p>&copy; 2024 Aplicación de Medicaciones y Comparador de Precios, Ricardo Henao </p>
+  </footer>
+
+  <script>
+    // Función para mostrar el módulo correcto
+    function showModule(moduleId) {
+      document.querySelectorAll('.module').forEach(module => {
+        module.style.display = 'none';
+      });
+      document.getElementById(moduleId).style.display = 'block';
+    }
+  </script>
+</body>
+</html>
