@@ -128,10 +128,10 @@ const productos = {
       { nombre: 'FRACTAL', dosis: { status1: 1.0, status2: 1.5, status3: 2.0 }, precioPorKilo: 38800, bacterias: ['E. coli','Salmonela spp','Clostridium', 'MEJORADOR DE LA EFICIENCIA ALIMENTICIA' ] },
       { nombre: 'EXOLUTION', dosis: { status1: 0.5, status2: 0.8, status3: 1.0 }, precioPorKilo: 36300, bacterias: ['E. coli','Salmonela spp','Clostridium', 'MEJORADOR DE LA EFICIENCIA ALIMENTICIA, EFECTO RESIDUAL VS Salmonella' ] },
       { nombre: 'CELMANAX', dosis: { status1: 1.5, status2: 1.8, status3: 2.0 }, precioPorKilo: 17500, bacterias: ['E. coli','Salmonela spp','Clostridium','MEJORADOR DE LA EFICIENCIA ALIMENTICIA'] },
-      { nombre: 'HALQUINOX 500', dosis: { status1: 0.7, status2: 0.1, status3: .120 }, precioPorKilo: 70400, bacterias: ['E. coli***', 'Salmonella spp***','Corynebacterium spp***', 'Clostridium **',] },
-      { nombre: 'HALQUINOX 800', dosis: { status1: 0.4, status2: 0.6, status3: 0.75 }, precioPorKilo: 94700, bacterias: ['E. coli***', 'Salmonella spp***','Corynebacterium spp***', 'Clostridium **'] },
-      { nombre: 'DMB', dosis: { status1: 0.3, status2: 0.4, status3: 0.5 }, precioPorKilo: 18500, bacterias: ['Brachyspira spp***', 'Clostridium ***','Estafilococcus spp***','Estreptococcus***','Corynobactereium spp*', 'NO TIENE TIEMPO DE RETIRO' ] },
-      { nombre: 'SAGAH', dosis: { status1: 0.62, status2: 0.1, status3: 0.250 }, precioPorKilo: 38800, bacterias: ['Clostridium **','Estafilococcus spp***','Estreptococcus***', 'NO TIENE TIEMPO DE RETIRO'] }
+      { nombre: 'HALQUINOX 500', dosis: { status1: 0.7, status2: 0.1, status3: .120 }, precioPorKilo: 70400, concentracion: 50, bacterias: ['E. coli***', 'Salmonella spp***','Corynebacterium spp***', 'Clostridium **',] },
+      { nombre: 'HALQUINOX 800', dosis: { status1: 0.4, status2: 0.6, status3: 0.75 }, precioPorKilo: 94700, concentracion: 80, bacterias: ['E. coli***', 'Salmonella spp***','Corynebacterium spp***', 'Clostridium **'] },
+      { nombre: 'DMB', dosis: { status1: 0.3, status2: 0.4, status3: 0.5 }, precioPorKilo: 18500, concentracion: 11, bacterias: ['Brachyspira spp***', 'Clostridium ***','Estafilococcus spp***','Estreptococcus***','Corynobactereium spp*', 'NO TIENE TIEMPO DE RETIRO' ] },
+      { nombre: 'SAGAH', dosis: { status1: 0.62, status2: 0.1, status3: 0.250 }, precioPorKilo: 38800, concentracion: 8, bacterias: ['Clostridium **','Estafilococcus spp***','Estreptococcus***', 'NO TIENE TIEMPO DE RETIRO'] }
    
     ],
     fase2: [

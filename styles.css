@@ -3,12 +3,21 @@ body {
   color: #333333; /* Color del texto */
   font-family: 'Arial', sans-serif; /* Fuente simple y legible */
 }
+header h1 {
+  color: red; /* Cambia el color específico del título en el header */
+}
 
 h1, h2 {
   color: #4CAF50; /* Verde suave para títulos */
   text-align: center; /* Centrar los títulos */
   font-weight: bold;
 }
+  header h1 {
+    color: red !important; /* Cambia el color específico del título en el header */
+  }
+  
+
+
 
 nav button {
   background-color: #4CAF50; /* Botones principales en verde */

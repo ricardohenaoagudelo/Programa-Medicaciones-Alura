@@ -10,7 +10,7 @@
     /* Estilo básico del cuerpo */
     body {
       background-color: #f0f0f0;
-      color: #333333;
+      color: #080000;
       font-family: 'Arial', sans-serif;
       margin: 0;
       padding: 0;
@@ -19,7 +19,7 @@
     /* Estilo para el header */
     header {
       background-color: #4CAF50;
-      color: rgb(12, 12, 12);
+      color: red !important; /* Forzar el color */
       padding: 20px;
       text-align: center;
     }
@@ -173,7 +173,7 @@
 </head>
 <body>
   <header>
-    <h1>Aplicación de Medicaciones y Comparador de Precios</h1>
+    <h1 style="color: white;">Aplicación de Medicaciones y Comparador de Precios</h1>
     <!-- Navegación entre módulos -->
     <nav>
       <button onclick="showModule('medication-module')">Módulo de Medicaciones</button>
@@ -241,6 +241,10 @@
         <option value="LINCOX">LINCOX</option>
         <option value="TRIMBAC">TRIMBAC</option>
         <option value="NEOCYN">NEOCYN</option>
+        <option value="HALQUINOX 800">HALQUINOX 800</option>
+        <option value="HALQUINOX 500">HALQUINOX 500</option>
+        <option value="SAGAH">SAGAH</option>
+        <option value="DMB">DMB</option>
       </select>
     </div>
 
